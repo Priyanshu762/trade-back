@@ -2,15 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./user/route");
-require('dotenv').config();
-const uri = process.env.MONGODB_URI;
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 mongoose
   .connect(
-    uri
+   "mongodb+srv://kumarpriyanshu762:trade@test0.rewtgrt.mongodb.net/?retryWrites=true&w=majority&appName=Test0"
     )
   .then(() => {
     console.log("Mongodb connected");
